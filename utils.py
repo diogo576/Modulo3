@@ -56,3 +56,11 @@ def ler_numero_decimal(mensagem="introduza um valor decimal:")->float:
         if testar.isdigit()and pontos<=1:
             return float(dados)
         print("Erro: O valor não é válido")
+
+
+def ler_numero_decimal_limites(valor_min,valor_max=None,mensagem="inroduza um valor:")->float:
+    while True:
+        valor = ler_numero_decimal(mensagem)
+        if valor >= valor_min and (valor_max is None or valor <= valor_max):
+            return valor 
+        print("Erro:valor não é válido")
